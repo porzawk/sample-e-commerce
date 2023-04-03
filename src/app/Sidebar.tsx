@@ -39,7 +39,7 @@ const MenuItem = ({ index, id, title, icon }: MenuItemProps) => {
 
 const Sidebar = () => {
   return (
-    <aside className="fixed top-0 left-0 z-40 w-56 h-screen  transition-transform -translate-x-full sm:translate-x-0 border-0 border-r border-solid border-[#E0E0E0]">
+    <aside className="fixed top-0 left-0 z-40 w-56 h-screen  transition-transform -translate-x-full lg:translate-x-0 border-0 border-r border-solid border-[#E0E0E0]">
       <div className="h-full overflow-y-auto bg-white scrollbar-thin scrollbar-thumb-[#363636] scrollbar-track-[#1f1f1f]">
         <IconContext.Provider value={{ size: "24px" }}>
           <div className="flex justify-center py-5">

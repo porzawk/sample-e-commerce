@@ -60,70 +60,73 @@ const Cart = () => {
     <div>
       <span className="text-2xl font-bold text-black">Cart</span>
       <div className="grid grid-cols-4 gap-2 w-full">
-        <div className="col-span-3">
+        <div className="col-span-4 sm:col-span-4 lg:col-span-4 2xl:col-span-3">
           <div className="w-full p-6 bg-white border border-gray-200 rounded-lg mt-4">
-            <table className="w-full text-sm text-left text-gray-500 ">
-              <thead className="text-base text-gray-700 bg-[#F4F7FE]">
-                <tr>
-                  <th scope="col" className="px-6 py-3 w-[600px]">
-                    Product
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Unit Price
-                  </th>
-                  <th scope="col" className="px-6 py-3" align="center">
-                    QTY
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Total
-                  </th>
-                  <th scope="col" className="px-6 py-3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.cartItems.map((item, index) => (
-                  <tr key={index} className="bg-white border-b ">
-                    <th
-                      scope="row"
-                      className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap "
-                    >
-                      <div className="flex items-center gap-2">
-                        <img
-                          className="rounded-full w-8 h-8"
-                          src={item.image}
-                          alt={item.title}
-                        />
-                        <span>{item.title}</span>
-                      </div>
+            <div className="overflow-x-scroll">
+              <table className="w-full text-sm text-left text-gray-500">
+                <thead className="text-base text-gray-700 bg-[#F4F7FE]">
+                  <tr>
+                    <th scope="col" className="px-6 py-3 w-[600px]">
+                      Product
                     </th>
-                    <td className="px-6 py-2">฿{item.price}</td>
-                    <td className="px-6 py-2">
-                      <div className="flex items-center justify-between gap-4 border border-black rounded-2xl py-2 px-2 text-black">
-                        <AiOutlinePlus
-                          className="cursor-pointer"
-                          size={20}
-                          onClick={() => handleIncreaseQtyClick(item.id)}
-                        />
-                        {item.qty}
-                        <AiOutlineMinus
-                          className="cursor-pointer"
-                          size={20}
-                          onClick={() => handleDecreaseQtyClick(item.id)}
-                        />
-                      </div>
-                    </td>
-                    <td className="px-6 py-2">฿{item.price * item.qty}</td>
-                    <td className="px-6 py-2">
-                      <AiFillCloseCircle
-                        size={20}
-                        className="text-black cursor-pointer"
-                        onClick={() => handleRemoveFromCartClick(item.id)}
-                      />
-                    </td>
+                    <th scope="col" className="px-6 py-3">
+                      Unit Price
+                    </th>
+                    <th scope="col" className="px-6 py-3" align="center">
+                      QTY
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      Total
+                    </th>
+                    <th scope="col" className="px-6 py-3"></th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {cart.cartItems.map((item, index) => (
+                    <tr key={index} className="bg-white border-b ">
+                      <th
+                        scope="row"
+                        className="px-6 py-2 font-medium text-gray-900 whitespace-nowrap "
+                      >
+                        <div className="flex items-center gap-2">
+                          <img
+                            className="rounded-full w-8 h-8"
+                            src={item.image}
+                            alt={item.title}
+                          />
+                          <span>{item.title}</span>
+                        </div>
+                      </th>
+                      <td className="px-6 py-2">฿{item.price}</td>
+                      <td className="px-6 py-2">
+                        <div className="flex items-center justify-between gap-4 border border-black rounded-2xl py-2 px-2 text-black">
+                          <AiOutlinePlus
+                            className="cursor-pointer"
+                            size={20}
+                            onClick={() => handleIncreaseQtyClick(item.id)}
+                          />
+                          {item.qty}
+                          <AiOutlineMinus
+                            className="cursor-pointer"
+                            size={20}
+                            onClick={() => handleDecreaseQtyClick(item.id)}
+                          />
+                        </div>
+                      </td>
+                      <td className="px-6 py-2">฿{item.price * item.qty}</td>
+                      <td className="px-6 py-2">
+                        <AiFillCloseCircle
+                          size={20}
+                          className="text-black cursor-pointer"
+                          onClick={() => handleRemoveFromCartClick(item.id)}
+                        />
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
             <div className="flex gap-2 mt-5 justify-between">
               <button
                 type="button"
@@ -142,7 +145,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="col-span-4 sm:col-span-4 lg:col-span-4 2xl:col-span-1">
           <div className="w-full p-6 bg-white border border-gray-200 rounded-lg mt-4 flex flex-col">
             <span className="text-base font-bold text-black">
               Order Summary

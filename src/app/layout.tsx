@@ -24,7 +24,7 @@ export default function RootLayout({
           {/* Sidebar */}
           <Sidebar />
           {/* Content */}
-          <div className="pl-56 pt-12 h-screen bg-[#F4F7FE] ">
+          <div className="md:pl-0 lg:pl-56 pt-12 h-screen bg-[#F4F7FE] ">
             <div className="h-full overflow-y-auto p-4 ">{children}</div>
           </div>
           <ToastContainer />
