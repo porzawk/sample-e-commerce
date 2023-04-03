@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <title>Netflix Clone</title>
+        <title>E-Commerce</title>
       </head>
       <body>
         <Provider store={store}>
